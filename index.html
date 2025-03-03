@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Портфолио</title>
+  <link rel="stylesheet" href="./css/style.css">
+  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+
+    <!-- fontawesame css link икнонки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    
+    <!-- стили для категорий -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css"> 
+
+    <link rel="icon" type="image/x-icon" href="./img/chess-knight-regular.svg">
+</head>
+<body>
+  <header class="header">
+    <a href="#home" class="logo">
+      <h2>Н.Перевезенцев.</h2>
+    </a>
+
+    <nav class="navbar">
+      <a href="#home" class="active">Главная</a>
+      <a href="#about">Обо мне</a>
+      <a href="#portfolio">Портфолио</a>
+      <a href="#contact">Контакты</a>
+    </nav>
+
+    <div class="fas fa-bars" id="menu-btn"></div>
+
+  </header>
+
+  <section class="home" id="home">
+    <div class="box-container">
+      <div class="home-content">
+        <div class="content">
+          <h2>Здравствуйте!</h2>
+          <h1>Я 
+            <span class="typing-text"></span>
+          </h1>
+          <p>На данный момент ищу работу или стажировку. Готов учиться и развиваться дальше. Считаю, что обладаю необходимым
+          потенциалом, однако мне нужен старт, чтобы "вкатиться" в профессию, а вам нужен недорогой, но усердный и способный
+          сотрудник.</p>
+          <a href="#about" class="btn">
+            <span>Обо мне</span>
+            <i class="fas fa-user"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="home-img">
+        <img src="img/IMG_0126.jpg" alt="foto">
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="about">
+    <div class="heading">
+      <h3>Обо <span>мне</span></h3>
+    </div>
+
+    <div class="box-container">
+      <div class="img">
+        <img src="./img/photo.jpg" alt="1">
+      </div>
+
+      <div class="content">
+        <h2>Меня зовут <span> Николай</span></h2>
+        <p>Практикуюсь разработкой сайтов уже 1,5 года. Постоянно развиваюсь и обучаюсь новому, рассматриваю актуальную ситуацию в веб индустрии, чтобы выдать качественный продукт клиенту. Так же
+        отрабатываю свои сайты для удобного пользования на всех устройствах пользователя. С навыками и результатами моей работы
+        вы можете ознакомиться подробнее ниже.</p>
+
+        <div class="about-info">
+          <div class="info">
+            <h4>возраст :<span> 28</span></h4>
+            <h4>город :<span> Санкт-Петербург</span></h4>
+            <h4>работа :<span> HTML-Верстальщик</span></h4>
+            <a href="./img/perevezen.pdf" class="btn" download="">
+              <span>Скачать резюме</span>
+              <i class="fas fa-download"></i>
+            </a>
+          </div>
+
+          <div class="numbers">
+            <div class="box">
+              <h4 class="number">HTML</h4>
+              <h3>+</h3>
+            </div>
+                      <div class="box">
+                        <h4 class="number">CSS</h4>
+                        <h3>+</h3>
+                      </div>
+
+                      <div class="box">
+                        <h4 class="number">JS</h4>
+                        <h3>+</h3>
+                      </div>
+
+                      <div class="box">
+                        <h4 class="number">FIGMA</h4>
+                        <h3>+</h3>
+                      </div>
+
+                    <div class="box">
+                      <h4 class="number">БЭМ</h4>
+                      <h3>+</h3>
+                    </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="portfolio" id="portfolio">
+    <div class="heading">
+      <h3>&laquo;<span>Портфолио</span>&raquo;</h3>
+    </div>
+
+    <div class="portfolio-container">
+      <ul class="controls">
+        <li class="button btn" data-filter="all">Все</li>
+        <li class="button btn" data-filter="web">Лендинги</li>
+        <li class="button btn" data-filter="big">Многостраничные сайты</li>
+        <li class="button btn" data-filter="react">Сайты на React</li>
+        <li class="button btn" data-filter="email">Email письма</li>
+      </ul>
+
+      <div class="gallery-container">
+        <div class="gallery-item img web">
+          <img src="./img/all/project-04.jpg" alt="phote">
+          <div class="content">
+            <h4>Лендинг</h4>
+            <p>проект на заказ</p>
+            <a href="https://jester0996.github.io/microser/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
+              <i class="fas fa-search-plus"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="gallery-item img web">
+          <img src="./img/all/3.png"  alt="phote" >
+          <div class="content">
+            <h4>Лендинг</h4>
+            <p>проект для портфолио</p>
+            <a href="https://jester0996.github.io/sport/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
+              <i class="fas fa-search-plus"></i>
+            </a>
+          </div>         
+        </div>
+              <div class="gallery-item img email">
+                <img src="./img/all/email.png" alt="phote">
+                <div class="content">
+                  <h4>Email письмо</h4>
+                  <p>проект для портфолио</p>
+                  <a href="https://jester0996.github.io/emal/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
+                    <i class="fas fa-search-plus"></i>
+                  </a>
+                </div>
+              </div>
+
+                <div class="gallery-item img big">
+                  <img src="./img/all/foto.png" alt="phote">
+                  <div class="content">
+                    <h4>Многостраничный</h4>
+                    <p>проект на заказ</p>
+                    <a href="https://jester0996.github.io/photographer/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
+                      <i class="fas fa-search-plus"></i>
+                    </a>
+                  </div>
+                </div>
+
+
+
+                            <div class="gallery-item img react">
+                              <img src="./img/all/project-03.jpg" alt="phote">
+                              <div class="content">
+                                <h4>Сайт на React</h4>
+                                <p>проект для портфолио</p>
+                                <a href="https://jester0996.github.io/react-M/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
+                                  <i class="fas fa-search-plus"></i>
+                                </a>
+                              </div>
+                            </div>
+
+
+
+
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <div class="social">
+      <a href="#!" class="fab fa-telegram"></a>
+      <a href="#!" class="fab fa-vk"></a>
+      <a href="#!" class="fab fa-whatsapp"></a>
+      <a href="https://github.com/Jester0996" class="fab  fa-github"></a>
+    </div>
+
+    <div class="copyright">
+      <p>Разработал <span>Перевезенцев Николай</span>   <i class="fa-regular fa-copyright"></i> 2025</p>
+    </div>
+
+  </footer>
+<!-- /кнопка навверх/ -->
+
+<div class="scroll-top">
+  <i class="fa fa-arrow-up"></i>
+  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-1 -1 102 102">
+    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
+      style="stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 0.0228267; transition: stroke-dashoffset 10ms linear;" />
+  </svg>
+  
+</div>
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+ 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script><!-- /Текст печчатается/ -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script> <!-- переключатель между категориями  -->
+
+
+
+  <script src="./js/main.js"></script>
+  
+</body>
+</html>
