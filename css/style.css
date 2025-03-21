@@ -490,26 +490,6 @@ footer .copyright p span {
   transform: translateY(0);
 }
 
-
-
-.social {}
-
-.fab {}
-
-.fa-telegram {}
-
-.fa-vk {}
-
-.fa-whatsapp {}
-
-.fa-github {}
-
-.copyright {}
-
-.fa-regular {}
-
-.fa-copyright {}
-
 /*АДАПТИВ*/
 
 @media(max-width: 991px) {
