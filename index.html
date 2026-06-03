@@ -1,253 +1,570 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Портфолио</title>
-  <link rel="stylesheet" href="./css/style.css">
-  
+  <meta name="description" content="Портфолио frontend-разработчика Николая Перевезенцева. Верстка, React, адаптивный дизайн.">
+  <meta name="keywords" content="frontend, html, css, javascript, react, верстка, портфолио">
+  <meta name="author" content="Николай Перевезенцев">
+  <meta property="og:title" content="Николай Перевезенцев — Frontend Developer">
+  <meta property="og:description" content="Портфолио веб-разработчика из Санкт-Петербурга">
+  <meta property="og:type" content="website">
+  <title>Николай Перевезенцев — Frontend Developer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- fontawesame css link икнонки -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
-    
-    <!-- стили для категорий -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/magnific-popup.min.css"> 
-
-    <link rel="icon" type="image/x-icon" href="./img/chess-knight-regular.svg">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
+<base target="_blank">
 </head>
 <body>
-  <header class="header">
-    <a href="#home" class="logo">
-      <h2>Н.Перевезенцев.</h2>
-    </a>
+  <!-- Preloader -->
+  <div class="preloader" id="preloader">
+    <div class="preloader-spinner"></div>
+  </div>
 
-    <nav class="navbar">
-      <a href="#home" class="active">Главная</a>
-      <a href="#about">Обо мне</a>
-      <a href="#portfolio">Портфолио</a>
-      <a href="#contact">Контакты</a>
-    </nav>
+  <!-- Header -->
+  <header class="header" id="header">
+    <div class="header-container">
+      <a href="#home" class="logo">
+        <span class="logo-bracket">&lt;</span>
+        <span class="logo-text">NP</span>
+        <span class="logo-bracket">/&gt;</span>
+      </a>
 
-    <div class="fas fa-bars" id="menu-btn"></div>
+      <nav class="navbar" id="navbar" aria-label="Главное меню">
+        <a href="#home" class="nav-link active" data-section="home">Главная</a>
+        <a href="#about" class="nav-link" data-section="about">Обо мне</a>
+        <a href="#skills" class="nav-link" data-section="skills">Навыки</a>
+        <a href="#portfolio" class="nav-link" data-section="portfolio">Портфолио</a>
+        <a href="#contact" class="nav-link" data-section="contact">Контакты</a>
+      </nav>
 
+      <button class="menu-toggle" id="menu-btn" aria-label="Открыть меню" aria-expanded="false">
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+        <span class="menu-line"></span>
+      </button>
+    </div>
   </header>
 
+  <!-- Hero Section -->
   <section class="home" id="home">
-    <div class="box-container">
+    <div class="home-bg">
+      <div class="gradient-orb orb-1"></div>
+      <div class="gradient-orb orb-2"></div>
+      <div class="gradient-orb orb-3"></div>
+    </div>
+    <div class="home-container">
       <div class="home-content">
-        <div class="content">
-          <h2>Здравствуйте!</h2>
-          <h1>Я 
-            <span class="typing-text"></span>
-          </h1>
-          <p>На данный момент ищу работу или стажировку. Готов учиться и развиваться дальше. Считаю, что обладаю необходимым
-          потенциалом, однако мне нужен старт, чтобы "вкатиться" в профессию, а вам нужен способный и усердный сотрудник.</p>
-          <a href="#about" class="btn">
-            <span>Обо мне</span>
-            <i class="fas fa-user"></i>
+        <div class="home-badge" data-aos="fade-up">
+          <i class="fas fa-circle-check"></i>
+          <span>Открыт к предложениям</span>
+        </div>
+        <h1 class="home-title" data-aos="fade-up" data-aos-delay="100">
+          Здравствуйте!<br>
+          Я <span class="typing-text"></span><span class="cursor">|</span>
+        </h1>
+        <p class="home-desc" data-aos="fade-up" data-aos-delay="200">
+          Frontend-разработчик из Санкт-Петербурга. Создаю современные, быстрые и адаптивные веб-приложения. 
+          Ищу возможность применить свои навыки в команде профессионалов.
+        </p>
+        <div class="home-buttons" data-aos="fade-up" data-aos-delay="300">
+          <a href="#portfolio" class="btn btn-primary">
+            <span>Мои работы</span>
+            <i class="fas fa-arrow-right"></i>
+          </a>
+          <a href="#contact" class="btn btn-outline">
+            <span>Связаться</span>
+            <i class="fas fa-paper-plane"></i>
+          </a>
+        </div>
+        <div class="home-stats" data-aos="fade-up" data-aos-delay="400">
+          <div class="stat-item">
+            <span class="stat-number" data-count="3">0</span>
+            <span class="stat-label">Года опыта</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="15">0</span>
+            <span class="stat-label">Проектов</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number" data-count="100">0</span>
+            <span class="stat-label">% Качество</span>
+          </div>
+        </div>
+      </div>
+      <div class="home-image" data-aos="fade-left" data-aos-delay="200">
+        <div class="image-wrapper">
+          <img src="img/IMG_0126.jpg" alt="Николай Перевезенцев" loading="lazy">
+          <div class="image-decoration"></div>
+        </div>
+      </div>
+    </div>
+    <div class="scroll-indicator">
+      <div class="mouse">
+        <div class="wheel"></div>
+      </div>
+      <span>Прокрутите вниз</span>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Обо мне</span>
+        <h2 class="section-title">Кто <span class="accent">я</span> такой?</h2>
+        <p class="section-subtitle">Немного расскажу о себе и своём пути</p>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-image" data-aos="fade-right">
+          <div class="about-image-wrapper">
+            <img src="img/photo.jpg" alt="Фото Николая" loading="lazy">
+            <div class="experience-badge">
+              <span class="exp-number">3+</span>
+              <span class="exp-text">Года<br>опыта</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="about-content" data-aos="fade-left">
+          <h3 class="about-name">Меня зовут <span class="accent">Николай Перевезенцев</span></h3>
+          <p class="about-text">
+            Я frontend-разработчик с фокусом на создание чистого, семантического кода и современных пользовательских интерфейсов. 
+            За 3 года самостоятельной практики я сверстал более 15 проектов различной сложности — от лендингов до многостраничных сайтов и React-приложений.
+          </p>
+          <p class="about-text">
+            Постоянно изучаю новые технологии и следую современным стандартам разработки. Верстаю по методологии БЭМ, 
+            использую препроцессоры, собираю проекты на Vite, работаю с Git и Figma.
+          </p>
+
+          <div class="about-info-grid">
+            <div class="info-card">
+              <i class="fas fa-calendar-alt"></i>
+              <div>
+                <span class="info-label">Возраст</span>
+                <span class="info-value">29 лет</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <span class="info-label">Локация</span>
+                <span class="info-value">Санкт-Петербург</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-briefcase"></i>
+              <div>
+                <span class="info-label">Специализация</span>
+                <span class="info-value">Frontend Developer</span>
+              </div>
+            </div>
+            <div class="info-card">
+              <i class="fas fa-graduation-cap"></i>
+              <div>
+                <span class="info-label">Образование</span>
+                <span class="info-value">Самообразование</span>
+              </div>
+            </div>
+          </div>
+
+          <a href="img/perevezen.pdf" class="btn btn-primary" download>
+            <span>Скачать резюме</span>
+            <i class="fas fa-download"></i>
           </a>
         </div>
       </div>
-
-      <div class="home-img">
-        <img src="img/IMG_0126.jpg" alt="foto">
-      </div>
     </div>
   </section>
 
-  <section class="about" id="about">
-    <div class="heading">
-      <h3>Обо <span>мне</span></h3>
-    </div>
-
-    <div class="box-container">
-      <div class="img">
-        <img src="./img/photo.jpg" alt="1">
+  <!-- Skills Section -->
+  <section class="skills" id="skills">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Навыки</span>
+        <h2 class="section-title">Мой <span class="accent">стек</span> технологий</h2>
+        <p class="section-subtitle">Инструменты и технологии, которые я использую ежедневно</p>
       </div>
 
-      <div class="content">
-        <h2>Меня зовут <span> Николай</span></h2>
-        <p>Практикуюсь разработкой сайтов уже 1,5 года. Постоянно развиваюсь и обучаюсь новому, рассматриваю актуальную ситуацию в веб индустрии, чтобы выдать качественный продукт клиенту. Так же
-        отрабатываю свои сайты для удобного пользования на всех устройствах пользователя. С навыками и результатами моей работы
-        вы можете ознакомиться подробнее ниже.</p>
-
-        <div class="about-info">
-          <div class="info">
-            <h4>возраст :<span> 28</span></h4>
-            <h4>город :<span> Санкт-Петербург</span></h4>
-            <h4>работа :<span> HTML-Верстальщик</span></h4>
-            <a href="./img/perevezen.pdf" class="btn" download="">
-              <span>Скачать резюме</span>
-              <i class="fas fa-download"></i>
-            </a>
+      <div class="skills-grid">
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="0">
+          <div class="skill-header">
+            <i class="fas fa-code"></i>
+            <h3>Frontend Core</h3>
           </div>
-
-          <div class="numbers">
-            <div class="box">
-              <h4 class="number">HTML</h4>
-              <h3>+</h3>
-            </div>
-                      <div class="box">
-                        <h4 class="number">CSS</h4>
-                        <h3>+</h3>
-                      </div>
-
-                      <div class="box">
-                        <h4 class="number">JS</h4>
-                        <h3>+</h3>
-                      </div>
-
-                      <div class="box">
-                        <h4 class="number">FIGMA</h4>
-                        <h3>+</h3>
-                      </div>
-
-                    <div class="box">
-                      <h4 class="number">БЭМ</h4>
-                      <h3>+</h3>
-                    </div>
-                      <div class="box">
-                        <h4 class="number">React</h4>
-                        <h3>+</h3>
-                      </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="portfolio" id="portfolio">
-    <div class="heading">
-      <h3>&laquo;<span>Портфолио</span>&raquo;</h3>
-    </div>
-
-    <div class="portfolio-container">
-      <ul class="controls">
-        <li class="button btn" data-filter="all">Все</li>
-        <li class="button btn" data-filter="web">Лендинги</li>
-        <li class="button btn" data-filter="big">Многостраничные сайты</li>
-        <li class="button btn" data-filter="react">Сайты на React</li>
-        <li class="button btn" data-filter="email">Email письма</li>
-      </ul>
-
-      <div class="gallery-container">
-        <div class="gallery-item img web">
-          <img src="./img/all/project-04.jpg" alt="phote">
-          <div class="content">
-            <h4>Лендинг</h4>
-            <p>проект на заказ</p>
-            <a href="https://jester0996.github.io/microser/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
-              <i class="fas fa-search-plus"></i>
-            </a>
-          </div>
-        </div>
-
-        <div class="gallery-item img web">
-          <img src="./img/all/3.png"  alt="phote" >
-          <div class="content">
-            <h4>Лендинг</h4>
-            <p>проект для портфолио</p>
-            <a href="https://jester0996.github.io/sport/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
-              <i class="fas fa-search-plus"></i>
-            </a>
-          </div>         
-        </div>
-              <div class="gallery-item img email">
-                <img src="./img/all/email.png" alt="phote">
-                <div class="content">
-                  <h4>Email письмо</h4>
-                  <p>проект для портфолио</p>
-                  <a href="https://jester0996.github.io/emal/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
-                    <i class="fas fa-search-plus"></i>
-                  </a>
-                </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">HTML5 / Semantic</span>
+                <span class="skill-percent">95%</span>
               </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="95"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">CSS3 / Flexbox / Grid</span>
+                <span class="skill-percent">90%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="90"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">React / Redux / Zustand </span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="70"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-                <div class="gallery-item img big">
-                  <img src="./img/all/foto.png" alt="phote">
-                  <div class="content">
-                    <h4>Многостраничный</h4>
-                    <p>проект на заказ</p>
-                    <a href="https://jester0996.github.io/photographer/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
-                      <i class="fas fa-search-plus"></i>
-                    </a>
-                  </div>
-                </div>
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+          <div class="skill-header">
+            <i class="fas fa-tools"></i>
+            <h3>Инструменты</h3>
+          </div>
+          <div class="skill-list">
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Git / GitHub</span>
+                <span class="skill-percent">85%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="85"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Figma / Photoshop / Pixso </span>
+                <span class="skill-percent">80%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="80"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">Vite / Webpack</span>
+                <span class="skill-percent">70%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="70"></div>
+              </div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-info">
+                <span class="skill-name">SASS / SCSS / MUI </span>
+                <span class="skill-percent">75%</span>
+              </div>
+              <div class="skill-bar">
+                <div class="skill-progress" data-width="75"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-
-
-                            <div class="gallery-item img react">
-                              <img src="./img/all/project-03.jpg" alt="phote">
-                              <div class="content">
-                                <h4>Сайт на React</h4>
-                                <p>проект для портфолио</p>
-                                <a href="https://jester0996.github.io/react-M/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
-                                  <i class="fas fa-search-plus"></i>
-                                </a>
-                              </div>
-                            </div>
-
-                                    <div class="gallery-item img web">
-                                      <img src="./img/all/teach.png" alt="phote">
-                                      <div class="content">
-                                        <h4>Лендинг</h4>
-                                        <p>проект на заказ</p>
-                                        <a href="https://jester0996.github.io/teacher/" target="_blank" class="open-btn" data-effect="mfp-newspaper">
-                                          <i class="fas fa-search-plus"></i>
-                                        </a>
-                                      </div>
-                                    </div>
-
-
-
-
+        <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
+          <div class="skill-header">
+            <i class="fas fa-layer-group"></i>
+            <h3>Дополнительно</h3>
+          </div>
+          <div class="skill-tags">
+            <span class="tag">БЭМ</span>
+            <span class="tag">Адаптивная верстка</span>
+            <span class="tag">Email-письма</span>
+            <span class="tag">REST API</span>
+            <span class="tag">JSON</span>
+            <span class="tag">LocalStorage</span>
+            <span class="tag">CSS Animations</span>
+            <span class="tag">jQuery</span>
+            <span class="tag">Bootstrap</span>
+            <span class="tag">Tailwind CSS</span>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <footer id="contact">
-    <div class="social">
-      <a href="#!" class="fab fa-telegram"></a>
-      <a href="#!" class="fab fa-vk"></a>
-      <a href="#!" class="fab fa-whatsapp"></a>
-      <a href="https://github.com/Jester0996" class="fab  fa-github"></a>
-    </div>
+  <!-- Portfolio Section -->
+  <section class="portfolio" id="portfolio">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Портфолио</span>
+        <h2 class="section-title">Мои <span class="accent">работы</span></h2>
+        <p class="section-subtitle">Здесь собраны лучшие проекты, над которыми я работал</p>
+      </div>
 
-    <div class="copyright">
-      <p>Разработал <span>Перевезенцев Николай</span>   <i class="fa-regular fa-copyright"></i> 2025</p>
-    </div>
+      <div class="portfolio-filter" data-aos="fade-up">
+        <button class="filter-btn active" data-filter="all">Все</button>
+        <button class="filter-btn" data-filter="landing">Лендинги</button>
+        <button class="filter-btn" data-filter="multi">Многостраничные</button>
+        <button class="filter-btn" data-filter="react">React</button>
+        <button class="filter-btn" data-filter="email">Email</button>
+      </div>
 
+      <div class="portfolio-grid">
+        <article class="portfolio-item" data-category="landing" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-image">
+            <img src="img/all/project-04.jpg" alt="Лендинг Microser" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">Лендинг</span>
+                <h3 class="portfolio-title">Microser</h3>
+                <p class="portfolio-desc">Коммерческий проект на заказ</p>
+                <div class="portfolio-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                </div>
+                <a href="https://jester0996.github.io/microser/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Смотреть проект</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="landing" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-image">
+            <img src="img/all/3.png" alt="Лендинг Sport" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">Лендинг</span>
+                <h3 class="portfolio-title">Sport App</h3>
+                <p class="portfolio-desc">Проект для портфолио</p>
+                <div class="portfolio-tags">
+                  <span>HTML</span>
+                  <span>SCSS</span>
+                  <span>JS</span>
+                </div>
+                <a href="https://jester0996.github.io/sport/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Смотреть проект</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="email" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-image">
+            <img src="img/all/email.png" alt="Email письмо" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">Email</span>
+                <h3 class="portfolio-title">Email Template</h3>
+                <p class="portfolio-desc">HTML-письмо для портфолио</p>
+                <div class="portfolio-tags">
+                  <span>HTML Email</span>
+                  <span>Tables</span>
+                </div>
+                <a href="https://jester0996.github.io/emal/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Смотреть проект</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="multi" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-image">
+            <img src="img/all/foto.png" alt="Многостраничный сайт фотографа" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">Многостраничный</span>
+                <h3 class="portfolio-title">Photographer</h3>
+                <p class="portfolio-desc">Коммерческий проект на заказ</p>
+                <div class="portfolio-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                </div>
+                <a href="https://jester0996.github.io/photographer/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Смотреть проект</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="react" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-image">
+            <img src="img/all/project-03.jpg" alt="Сайт на React" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">React</span>
+                <h3 class="portfolio-title">React App</h3>
+                <p class="portfolio-desc">SPA-приложение для портфолио</p>
+                <div class="portfolio-tags">
+                  <span>React</span>
+                  <span>JS</span>
+                  <span>CSS</span>
+                </div>
+                <a href="https://jester0996.github.io/react-M/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Смотреть проект</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="landing" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-image">
+            <img src="img/all/teach.png" alt="Лендинг для учителя" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">Лендинг</span>
+                <h3 class="portfolio-title">Teacher</h3>
+                <p class="portfolio-desc">Коммерческий проект на заказ</p>
+                <div class="portfolio-tags">
+                  <span>HTML</span>
+                  <span>CSS</span>
+                  <span>JS</span>
+                </div>
+                <a href="https://jester0996.github.io/teacher/" target="_blank" class="portfolio-link">
+                  <i class="fas fa-external-link-alt"></i>
+                  <span>Смотреть проект</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Контакты</span>
+        <h2 class="section-title">Давайте <span class="accent">работать</span> вместе</h2>
+        <p class="section-subtitle">Есть идея или предложение? Напишите мне!</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-info" data-aos="fade-right">
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-map-marker-alt"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Локация</h4>
+              <p>Санкт-Петербург, Россия</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fas fa-envelope"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Email</h4>
+              <p>nikolay@example.com</p>
+            </div>
+          </div>
+          <div class="contact-card">
+            <div class="contact-icon">
+              <i class="fab fa-telegram"></i>
+            </div>
+            <div class="contact-details">
+              <h4>Telegram</h4>
+              <p>@jes0809</p>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://github.com/Jester0996" target="_blank" class="social-link" aria-label="GitHub">
+              <i class="fab fa-github"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="Telegram">
+              <i class="fab fa-telegram"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="VK">
+              <i class="fab fa-vk"></i>
+            </a>
+            <a href="#" class="social-link" aria-label="WhatsApp">
+              <i class="fab fa-whatsapp"></i>
+            </a>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" data-aos="fade-left">
+          <div class="form-group">
+            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            <label for="name">Ваше имя</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" name="email" placeholder="Ваш email" required>
+            <label for="email">Ваш email</label>
+          </div>
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Тема сообщения" required>
+            <label for="subject">Тема сообщения</label>
+          </div>
+          <div class="form-group">
+            <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение..." required></textarea>
+            <label for="message">Ваше сообщение</label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-full">
+            <span>Отправить сообщение</span>
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-logo">
+          <span class="logo-bracket">&lt;</span>
+          <span class="logo-text">NP</span>
+          <span class="logo-bracket">/&gt;</span>
+        </div>
+        <p class="footer-text">Frontend-разработчик, создающий современные веб-приложения</p>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Николай Перевезенцев. Все права защищены.</p>
+        <p>Сделано с <i class="fas fa-heart"></i> и много <i class="fas fa-coffee"></i></p>
+      </div>
+    </div>
   </footer>
-<!-- /кнопка навверх/ -->
 
-<div class="scroll-top">
-  <i class="fa fa-arrow-up"></i>
-  <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="-1 -1 102 102">
-    <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
-      style="stroke-dasharray: 307.919, 307.919; stroke-dashoffset: 0.0228267; transition: stroke-dashoffset 10ms linear;" />
-  </svg>
-  
-</div>
+  <!-- Scroll Top -->
+  <button class="scroll-top" id="scroll-top" aria-label="Наверх">
+    <i class="fas fa-arrow-up"></i>
+    <svg class="scroll-progress" viewBox="0 0 48 48">
+      <circle cx="24" cy="24" r="20" fill="none" stroke="currentColor" stroke-width="2" />
+    </svg>
+  </button>
 
-
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-
- 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script><!-- /Текст печчатается/ -->
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.2.0/jquery.magnific-popup.min.js"></script> <!-- переключатель между категориями  -->
-
-
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.1.0/typed.umd.js"></script>
   <script src="./js/main.js"></script>
-  
 </body>
 </html>
