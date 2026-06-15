@@ -3,24 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Портфолио frontend-разработчика Николая Перевезенцева. Верстка, React, адаптивный дизайн.">
-  <meta name="keywords" content="frontend, html, css, javascript, react, верстка, портфолио">
+  <meta name="description" content="Портфолио frontend-разработчика Николая Перевезенцева. React, TypeScript, адаптивный дизайн.">
+  <meta name="keywords" content="frontend, html, css, javascript, react, typescript, верстка, портфолио, Санкт-Петербург">
   <meta name="author" content="Николай Перевезенцев">
   <meta property="og:title" content="Николай Перевезенцев — Frontend Developer">
-  <meta property="og:description" content="Портфолио веб-разработчика из Санкт-Петербурга">
+  <meta property="og:description" content="Портфолио веб-разработчика из Санкт-Петербурга. React, TypeScript, HTML/CSS">
   <meta property="og:type" content="website">
   <title>Николай Перевезенцев — Frontend Developer</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
- <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👨‍💻</text></svg>">
-<base target="_blank">
 </head>
 <body>
+
   <!-- Preloader -->
   <div class="preloader" id="preloader">
     <div class="preloader-spinner"></div>
@@ -36,11 +35,12 @@
       </a>
 
       <nav class="navbar" id="navbar" aria-label="Главное меню">
-        <a href="#home" class="nav-link active" data-section="home">Главная</a>
-        <a href="#about" class="nav-link" data-section="about">Обо мне</a>
-        <a href="#skills" class="nav-link" data-section="skills">Навыки</a>
+        <a href="#home"      class="nav-link active" data-section="home">Главная</a>
+        <a href="#about"     class="nav-link" data-section="about">Обо мне</a>
+        <a href="#skills"    class="nav-link" data-section="skills">Навыки</a>
+        <a href="#timeline"  class="nav-link" data-section="timeline">Путь</a>
         <a href="#portfolio" class="nav-link" data-section="portfolio">Портфолио</a>
-        <a href="#contact" class="nav-link" data-section="contact">Контакты</a>
+        <a href="#contact"   class="nav-link" data-section="contact">Контакты</a>
       </nav>
 
       <button class="menu-toggle" id="menu-btn" aria-label="Открыть меню" aria-expanded="false">
@@ -69,7 +69,7 @@
           Я <span class="typing-text"></span><span class="cursor">|</span>
         </h1>
         <p class="home-desc" data-aos="fade-up" data-aos-delay="200">
-          Frontend-разработчик из Санкт-Петербурга. Создаю современные, быстрые и адаптивные веб-приложения. 
+          Frontend-разработчик из Санкт-Петербурга. Создаю современные, быстрые и адаптивные веб-приложения.
           Ищу возможность применить свои навыки в команде профессионалов.
         </p>
         <div class="home-buttons" data-aos="fade-up" data-aos-delay="300">
@@ -96,18 +96,31 @@
             <span class="stat-label">% Качество</span>
           </div>
         </div>
+        <!-- NEW: GitHub CTA -->
+        <div class="home-github" data-aos="fade-up" data-aos-delay="500">
+          <a href="https://github.com/Jester0996" target="_blank" class="github-cta">
+            <i class="fab fa-github"></i>
+            <span>github.com/Jester0996</span>
+            <i class="fas fa-external-link-alt github-ext"></i>
+          </a>
+          <span class="github-note">Весь код открыт — смотрите историю коммитов</span>
+        </div>
       </div>
       <div class="home-image" data-aos="fade-left" data-aos-delay="200">
         <div class="image-wrapper">
           <img src="img/IMG_0126.jpg" alt="Николай Перевезенцев" loading="lazy">
           <div class="image-decoration"></div>
         </div>
+        <!-- NEW: tech badges floating -->
+        <div class="tech-badges">
+          <span class="tech-badge tech-badge--react"><i class="fab fa-react"></i> React</span>
+          <span class="tech-badge tech-badge--ts">TS</span>
+          <span class="tech-badge tech-badge--js"><i class="fab fa-js"></i> JS</span>
+        </div>
       </div>
     </div>
     <div class="scroll-indicator">
-      <div class="mouse">
-        <div class="wheel"></div>
-      </div>
+      <div class="mouse"><div class="wheel"></div></div>
       <span>Прокрутите вниз</span>
     </div>
   </section>
@@ -135,13 +148,25 @@
         <div class="about-content" data-aos="fade-left">
           <h3 class="about-name">Меня зовут <span class="accent">Николай Перевезенцев</span></h3>
           <p class="about-text">
-            Я frontend-разработчик с фокусом на создание чистого, семантического кода и современных пользовательских интерфейсов. 
-            За 3 года самостоятельной практики я сверстал более 15 проектов различной сложности — от лендингов до многостраничных сайтов и React-приложений.
+            Я frontend-разработчик с фокусом на создание чистого, семантического кода и современных
+            пользовательских интерфейсов. За 3 года самостоятельной практики я сверстал более 15 проектов
+            различной сложности — от лендингов до многостраничных сайтов и React-приложений.
           </p>
           <p class="about-text">
-            Постоянно изучаю новые технологии и следую современным стандартам разработки. Верстаю по методологии БЭМ, 
-            использую препроцессоры, собираю проекты на Vite, работаю с Git и Figma.
+            Постоянно изучаю новые технологии и следую современным стандартам разработки. Верстаю по методологии
+            БЭМ, использую препроцессоры, собираю проекты на Vite, работаю с Git и Figma.
           </p>
+
+          <!-- NEW: что я умею делать для бизнеса -->
+          <div class="about-value" data-aos="fade-up">
+            <h4 class="about-value__title">Что я даю работодателю:</h4>
+            <ul class="about-value__list">
+              <li><i class="fas fa-check-circle"></i> Верстаю точно по макету из Figma — пиксель в пиксель</li>
+              <li><i class="fas fa-check-circle"></i> Пишу чистый, читаемый и поддерживаемый код</li>
+              <li><i class="fas fa-check-circle"></i> Быстро обучаюсь новым стекам внутри команды</li>
+              <li><i class="fas fa-check-circle"></i> Довожу задачи до конца без постоянного контроля</li>
+            </ul>
+          </div>
 
           <div class="about-info-grid">
             <div class="info-card">
@@ -168,16 +193,22 @@
             <div class="info-card">
               <i class="fas fa-graduation-cap"></i>
               <div>
-                <span class="info-label">Образование</span>
-                <span class="info-value">Самообразование</span>
+                <span class="info-label">Формат работы</span>
+                <span class="info-value">Удалённо / Офис</span>
               </div>
             </div>
           </div>
 
-          <a href="img/perevezen.pdf" class="btn btn-primary" download>
-            <span>Скачать резюме</span>
-            <i class="fas fa-download"></i>
-          </a>
+          <div class="about-actions">
+            <a href="img/perevezen.pdf" class="btn btn-primary" download>
+              <span>Скачать резюме</span>
+              <i class="fas fa-download"></i>
+            </a>
+            <a href="https://github.com/Jester0996" target="_blank" class="btn btn-outline">
+              <i class="fab fa-github"></i>
+              <span>GitHub</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
@@ -204,36 +235,28 @@
                 <span class="skill-name">HTML5 / Semantic</span>
                 <span class="skill-percent">95%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="95"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="95"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-info">
                 <span class="skill-name">CSS3 / Flexbox / Grid</span>
                 <span class="skill-percent">90%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="90"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="90"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">JavaScript (ES6+)</span>
+                <span class="skill-name">JavaScript (ES6+) / TypeScript</span>
                 <span class="skill-percent">80%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="80"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">React / Redux / Zustand </span>
+                <span class="skill-name">React / Redux / Zustand</span>
                 <span class="skill-percent">70%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="70"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
             </div>
           </div>
         </div>
@@ -249,36 +272,28 @@
                 <span class="skill-name">Git / GitHub</span>
                 <span class="skill-percent">85%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="85"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="85"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">Figma / Photoshop / Pixso </span>
+                <span class="skill-name">Figma / Photoshop / Pixso</span>
                 <span class="skill-percent">80%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="80"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="80"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-info">
                 <span class="skill-name">Vite / Webpack</span>
                 <span class="skill-percent">70%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="70"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="70"></div></div>
             </div>
             <div class="skill-item">
               <div class="skill-info">
-                <span class="skill-name">SASS / SCSS / MUI </span>
+                <span class="skill-name">SASS / SCSS / MUI</span>
                 <span class="skill-percent">75%</span>
               </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-width="75"></div>
-              </div>
+              <div class="skill-bar"><div class="skill-progress" data-width="75"></div></div>
             </div>
           </div>
         </div>
@@ -289,6 +304,7 @@
             <h3>Дополнительно</h3>
           </div>
           <div class="skill-tags">
+            <span class="tag tag--hot">TypeScript</span>
             <span class="tag">БЭМ</span>
             <span class="tag">Адаптивная верстка</span>
             <span class="tag">Email-письма</span>
@@ -299,6 +315,70 @@
             <span class="tag">jQuery</span>
             <span class="tag">Bootstrap</span>
             <span class="tag">Tailwind CSS</span>
+            <span class="tag tag--learning">Next.js — изучаю</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEW: Timeline / Path Section ===== -->
+  <section class="timeline" id="timeline">
+    <div class="container">
+      <div class="section-header" data-aos="fade-up">
+        <span class="section-tag">Мой путь</span>
+        <h2 class="section-title">Как я <span class="accent">развивался</span></h2>
+        <p class="section-subtitle">Шаг за шагом — от нуля до первых коммерческих проектов</p>
+      </div>
+
+      <div class="timeline-track">
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022</span>
+            <h4 class="timeline-title">Старт обучения</h4>
+            <p class="timeline-desc">Начал изучать HTML и CSS самостоятельно по видеокурсам и документации. Первые вёрстки — по туториалам.</p>
+            <div class="timeline-tags"><span>HTML</span><span>CSS</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item--right" data-aos="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2022 — осень</span>
+            <h4 class="timeline-title">JavaScript + первые проекты</h4>
+            <p class="timeline-desc">Освоил основы JavaScript: DOM, события, асинхронность. Начал верстать лендинги с интерактивом — слайдеры, формы, анимации.</p>
+            <div class="timeline-tags"><span>JavaScript</span><span>SCSS</span><span>БЭМ</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023</span>
+            <h4 class="timeline-title">Первые коммерческие заказы</h4>
+            <p class="timeline-desc">Сверстал сайт фотографа и лендинг Microser на заказ. Впервые работал с реальным техническим заданием и клиентом.</p>
+            <div class="timeline-tags"><span>Лендинги</span><span>Многостраничные</span><span>Фриланс</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item timeline-item--right" data-aos="fade-left">
+          <div class="timeline-dot"></div>
+          <div class="timeline-card">
+            <span class="timeline-date">2023 — осень</span>
+            <h4 class="timeline-title">React + Vite</h4>
+            <p class="timeline-desc">Начал изучение React: компоненты, хуки, состояние, маршрутизация. Собрал первое SPA-приложение, развернул на Vercel.</p>
+            <div class="timeline-tags"><span>React</span><span>Vite</span><span>React Router</span></div>
+          </div>
+        </div>
+
+        <div class="timeline-item" data-aos="fade-right">
+          <div class="timeline-dot timeline-dot--current"></div>
+          <div class="timeline-card timeline-card--current">
+            <span class="timeline-date">2024 — сейчас</span>
+            <h4 class="timeline-title">Рост и поиск команды</h4>
+            <p class="timeline-desc">Изучаю TypeScript и Next.js. Углубляюсь в работу с API, архитектуру приложений. Готовлюсь к первой работе в команде.</p>
+            <div class="timeline-tags"><span>TypeScript</span><span>Next.js</span><span>Redux Toolkit</span></div>
           </div>
         </div>
       </div>
@@ -323,6 +403,82 @@
       </div>
 
       <div class="portfolio-grid">
+        <article class="portfolio-item" data-category="react" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-image">
+            <img src="img/all/movie.png" alt="Каталог" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">React</span>
+                <h3 class="portfolio-title">Movie</h3>
+                <p class="portfolio-desc">Каталог фильмов</p>
+                <div class="portfolio-tags"><span>React-приложений</span><span>TS</span><span>CSS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://movie-tan-one.vercel.app/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="react" data-aos="fade-up" data-aos-delay="0">
+          <div class="portfolio-image">
+            <img src="img/all/metall.png" alt="Магазин фурнитуры" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">React</span>
+                <h3 class="portfolio-title">StellageMarket</h3>
+                <p class="portfolio-desc">Магазин фурнитуры — фильтрация, корзина, избранное</p>
+                <div class="portfolio-tags"><span>HTML</span><span>JS</span><span>CSS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://chicken-shop-blush.vercel.app/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="react" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-image">
+            <img src="img/all/shop.png" alt="React магазин" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">React</span>
+                <h3 class="portfolio-title">React Shop</h3>
+                <p class="portfolio-desc">SPA-магазин на React/Vite с роутингом и состоянием</p>
+                <div class="portfolio-tags"><span>React</span><span>Vite</span><span>CSS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://chicken-shop-blush.vercel.app/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="portfolio-item" data-category="react" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-image">
+            <img src="img/all/avto.jpg.png" alt="Авторизация React" loading="lazy">
+            <div class="portfolio-overlay">
+              <div class="portfolio-content">
+                <span class="portfolio-category">React</span>
+                <h3 class="portfolio-title">Auth Flow</h3>
+                <p class="portfolio-desc">Форма авторизации / регистрации на React с валидацией</p>
+                <div class="portfolio-tags"><span>React</span><span>Vite</span><span>Validation</span></div>
+                <div class="portfolio-links">
+                  <a href="https://pro1-red.vercel.app/register" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
         <article class="portfolio-item" data-category="landing" data-aos="fade-up" data-aos-delay="0">
           <div class="portfolio-image">
             <img src="img/all/project-04.jpg" alt="Лендинг Microser" loading="lazy">
@@ -331,15 +487,12 @@
                 <span class="portfolio-category">Лендинг</span>
                 <h3 class="portfolio-title">Microser</h3>
                 <p class="portfolio-desc">Коммерческий проект на заказ</p>
-                <div class="portfolio-tags">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JS</span>
+                <div class="portfolio-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://jester0996.github.io/microser/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
                 </div>
-                <a href="https://jester0996.github.io/microser/" target="_blank" class="portfolio-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Смотреть проект</span>
-                </a>
               </div>
             </div>
           </div>
@@ -353,15 +506,12 @@
                 <span class="portfolio-category">Лендинг</span>
                 <h3 class="portfolio-title">Sport App</h3>
                 <p class="portfolio-desc">Проект для портфолио</p>
-                <div class="portfolio-tags">
-                  <span>HTML</span>
-                  <span>SCSS</span>
-                  <span>JS</span>
+                <div class="portfolio-tags"><span>HTML</span><span>SCSS</span><span>JS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://jester0996.github.io/sport/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
                 </div>
-                <a href="https://jester0996.github.io/sport/" target="_blank" class="portfolio-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Смотреть проект</span>
-                </a>
               </div>
             </div>
           </div>
@@ -375,14 +525,12 @@
                 <span class="portfolio-category">Email</span>
                 <h3 class="portfolio-title">Email Template</h3>
                 <p class="portfolio-desc">HTML-письмо для портфолио</p>
-                <div class="portfolio-tags">
-                  <span>HTML Email</span>
-                  <span>Tables</span>
+                <div class="portfolio-tags"><span>HTML Email</span><span>Tables</span></div>
+                <div class="portfolio-links">
+                  <a href="https://jester0996.github.io/emal/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
                 </div>
-                <a href="https://jester0996.github.io/emal/" target="_blank" class="portfolio-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Смотреть проект</span>
-                </a>
               </div>
             </div>
           </div>
@@ -390,21 +538,18 @@
 
         <article class="portfolio-item" data-category="multi" data-aos="fade-up" data-aos-delay="0">
           <div class="portfolio-image">
-            <img src="img/all/foto.png" alt="Многостраничный сайт фотографа" loading="lazy">
+            <img src="img/all/foto.png" alt="Сайт фотографа" loading="lazy">
             <div class="portfolio-overlay">
               <div class="portfolio-content">
                 <span class="portfolio-category">Многостраничный</span>
                 <h3 class="portfolio-title">Photographer</h3>
                 <p class="portfolio-desc">Коммерческий проект на заказ</p>
-                <div class="portfolio-tags">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JS</span>
+                <div class="portfolio-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://jester0996.github.io/photographer/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
                 </div>
-                <a href="https://jester0996.github.io/photographer/" target="_blank" class="portfolio-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Смотреть проект</span>
-                </a>
               </div>
             </div>
           </div>
@@ -412,21 +557,18 @@
 
         <article class="portfolio-item" data-category="react" data-aos="fade-up" data-aos-delay="100">
           <div class="portfolio-image">
-            <img src="img/all/project-03.jpg" alt="Сайт на React" loading="lazy">
+            <img src="img/all/project-03.jpg" alt="React App" loading="lazy">
             <div class="portfolio-overlay">
               <div class="portfolio-content">
                 <span class="portfolio-category">React</span>
                 <h3 class="portfolio-title">React App</h3>
                 <p class="portfolio-desc">SPA-приложение для портфолио</p>
-                <div class="portfolio-tags">
-                  <span>React</span>
-                  <span>JS</span>
-                  <span>CSS</span>
+                <div class="portfolio-tags"><span>React</span><span>JS</span><span>CSS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://jester0996.github.io/react-M/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
                 </div>
-                <a href="https://jester0996.github.io/react-M/" target="_blank" class="portfolio-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Смотреть проект</span>
-                </a>
               </div>
             </div>
           </div>
@@ -440,24 +582,35 @@
                 <span class="portfolio-category">Лендинг</span>
                 <h3 class="portfolio-title">Teacher</h3>
                 <p class="portfolio-desc">Коммерческий проект на заказ</p>
-                <div class="portfolio-tags">
-                  <span>HTML</span>
-                  <span>CSS</span>
-                  <span>JS</span>
+                <div class="portfolio-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                <div class="portfolio-links">
+                  <a href="https://jester0996.github.io/teacher/" target="_blank" class="portfolio-link">
+                    <i class="fas fa-external-link-alt"></i><span>Демо</span>
+                  </a>
                 </div>
-                <a href="https://jester0996.github.io/teacher/" target="_blank" class="portfolio-link">
-                  <i class="fas fa-external-link-alt"></i>
-                  <span>Смотреть проект</span>
-                </a>
               </div>
             </div>
           </div>
         </article>
       </div>
+
+      <!-- NEW: GitHub CTA block -->
+      <div class="portfolio-github" data-aos="fade-up">
+        <div class="portfolio-github__inner">
+          <i class="fab fa-github portfolio-github__icon"></i>
+          <div>
+            <h3>Хотите увидеть код изнутри?</h3>
+            <p>Все проекты с открытым кодом на GitHub — коммиты, структура, README</p>
+          </div>
+          <a href="https://github.com/Jester0996" target="_blank" class="btn btn-outline">
+            Открыть GitHub <i class="fas fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
-  <!-- Contact Section -->
+  <!-- Contact Section — WORKING FORM via Formspree -->
   <section class="contact" id="contact">
     <div class="container">
       <div class="section-header" data-aos="fade-up">
@@ -469,27 +622,21 @@
       <div class="contact-grid">
         <div class="contact-info" data-aos="fade-right">
           <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-map-marker-alt"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
             <div class="contact-details">
               <h4>Локация</h4>
               <p>Санкт-Петербург, Россия</p>
             </div>
           </div>
           <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fas fa-envelope"></i>
-            </div>
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
             <div class="contact-details">
               <h4>Email</h4>
-              <p>nikolay@example.com</p>
+              <p>nnaarraa@mail.ru</p>
             </div>
           </div>
           <div class="contact-card">
-            <div class="contact-icon">
-              <i class="fab fa-telegram"></i>
-            </div>
+            <div class="contact-icon"><i class="fab fa-telegram"></i></div>
             <div class="contact-details">
               <h4>Telegram</h4>
               <p>@jes0809</p>
@@ -500,7 +647,7 @@
             <a href="https://github.com/Jester0996" target="_blank" class="social-link" aria-label="GitHub">
               <i class="fab fa-github"></i>
             </a>
-            <a href="#" class="social-link" aria-label="Telegram">
+            <a href="https://t.me/jes0809" target="_blank" class="social-link" aria-label="Telegram">
               <i class="fab fa-telegram"></i>
             </a>
             <a href="#" class="social-link" aria-label="VK">
@@ -510,29 +657,91 @@
               <i class="fab fa-whatsapp"></i>
             </a>
           </div>
+
+          <!-- NEW: availability block -->
+          <div class="availability-card">
+            <div class="availability-dot"></div>
+            <div>
+              <strong>Доступен для работы</strong>
+              <p>Рассматриваю офис, удалённо и гибрид</p>
+            </div>
+          </div>
         </div>
 
-        <form class="contact-form" id="contact-form" data-aos="fade-left">
+        <!--
+          ========================================================
+          WORKING FORM — Formspree
+          ========================================================
+          КАК АКТИВИРОВАТЬ (делается один раз, БЕСПЛАТНО):
+          1. Зайдите на https://formspree.io
+          2. Нажмите "Sign up" и зарегистрируйтесь
+          3. Нажмите "+ New Form"
+          4. Введите имя формы (например "Portfolio Contact")
+             и ваш email: nnaarraa@mail.ru
+          5. Нажмите "Create Form"
+          6. Вам выдадут URL вида: https://formspree.io/f/XXXXXXXX
+          7. Замените "YOUR_FORM_ID" ниже на ваш ID (8 символов после /f/)
+          8. Задеплойте сайт и отправьте одно тестовое сообщение
+          9. Formspree пришлёт письмо подтверждения — нажмите "Confirm"
+          10. Всё! Теперь сообщения приходят на nnaarraa@mail.ru
+
+          Бесплатный план: 50 сообщений в месяц — для портфолио хватит.
+          ========================================================
+        -->
+        <form
+          class="contact-form"
+          id="contact-form"
+          action="https://formspree.io/f/mykawdbq"
+          method="POST"
+          data-aos="fade-left"
+          novalidate
+        >
+          <!-- Honeypot anti-spam (скрытое поле — не трогайте) -->
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+          <!-- Тема письма в inbox -->
+          <input type="hidden" name="_subject" value="Новое сообщение с портфолио">
+
           <div class="form-group">
-            <input type="text" id="name" name="name" placeholder="Ваше имя" required>
+            <input type="text" id="name" name="name" placeholder="Ваше имя" required minlength="2">
             <label for="name">Ваше имя</label>
+            <span class="form-error" aria-live="polite"></span>
           </div>
           <div class="form-group">
             <input type="email" id="email" name="email" placeholder="Ваш email" required>
             <label for="email">Ваш email</label>
+            <span class="form-error" aria-live="polite"></span>
           </div>
           <div class="form-group">
             <input type="text" id="subject" name="subject" placeholder="Тема сообщения" required>
             <label for="subject">Тема сообщения</label>
+            <span class="form-error" aria-live="polite"></span>
           </div>
           <div class="form-group">
-            <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение..." required></textarea>
+            <textarea id="message" name="message" rows="5" placeholder="Ваше сообщение..." required minlength="10"></textarea>
             <label for="message">Ваше сообщение</label>
+            <span class="form-error" aria-live="polite"></span>
           </div>
-          <button type="submit" class="btn btn-primary btn-full">
-            <span>Отправить сообщение</span>
-            <i class="fas fa-paper-plane"></i>
+
+          <button type="submit" class="btn btn-primary btn-full" id="submit-btn">
+            <span class="btn-text">Отправить сообщение</span>
+            <i class="fas fa-paper-plane btn-icon"></i>
           </button>
+
+          <!-- Success / Error messages -->
+          <div class="form-success" id="form-success" hidden>
+            <i class="fas fa-check-circle"></i>
+            <div>
+              <strong>Сообщение отправлено!</strong>
+              <p>Я свяжусь с вами в ближайшее время.</p>
+            </div>
+          </div>
+          <div class="form-fail" id="form-fail" hidden>
+            <i class="fas fa-exclamation-circle"></i>
+            <div>
+              <strong>Ошибка отправки</strong>
+              <p>Попробуйте ещё раз или напишите напрямую: <a href="mailto:nnaarraa@mail.ru">nnaarraa@mail.ru</a></p>
+            </div>
+          </div>
         </form>
       </div>
     </div>
@@ -548,6 +757,10 @@
           <span class="logo-bracket">/&gt;</span>
         </div>
         <p class="footer-text">Frontend-разработчик, создающий современные веб-приложения</p>
+        <div class="footer-socials">
+          <a href="https://github.com/Jester0996" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://t.me/jes0809" target="_blank" aria-label="Telegram"><i class="fab fa-telegram"></i></a>
+        </div>
       </div>
       <div class="footer-bottom">
         <p>© 2026 Николай Перевезенцев. Все права защищены.</p>
